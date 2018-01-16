@@ -4,15 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "unit": "jest --config tests/jest.config.js",
+    "e2e": "jest --config specs/jest.config.js",
+    "test": "npm run unit && npm run e2e",
     "update": "webdriver-manager update"
   },
   "author": "",
   "license": "MIT",
-  "jest": {
-    "testEnvironment": "./lib/JestEnvironmentWebdriver.js",
-    "setupTestFrameworkScriptFile": "./jasmine.config.js"
-  },
   "dependencies": {
     "jest": "~22.0.6",
     "jest-environment-node": "~22.0.6",
